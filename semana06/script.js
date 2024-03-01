@@ -1,20 +1,38 @@
-const prompt = require("prompt-sync")({sigint: true});
+// // showInfo();
 
-const teste = new Promise((resolve, reject) => {
-    let numero = parseInt(prompt("Digite um número:"));
-    if (numero % 2 === 0) {
-        resolve(`O número digitado foi ${numero} ele é par`);
-    } else {
-        reject(`O número digitado foi ${numero} ele é impar`);
-    }
-});
+// // // objeto
+// // let user = { nome: "Alex", idade: "35"};
 
+// let userName = "Alex";
+// let idade = 23;
 
-teste
-.then((par) => {
-    console.log(par);
+// // add no localstorage
+// localStorage.setItem("nome", userName);
+// localStorage.setItem("cidade", "Ribeirão Preto");
+// localStorage.setItem("idade", idade);
+// localStorage.setItem("estaAtivo", true);
+
+// // add no localstorage
+// localStorage.removeItem("");
+
+// localStorage.setItem();
+// // add no localstorage
+
+// localStorage.setItem();
+// // add no localstorage
+
+let options = {
+    method: 'GET',
+};
+
+fetch('https://pokeapi.co/api/v2/pokemon/pikachu', options)
+.then((respostaFetch) => {
+    // console.log(resposta);
+    return respostaFetch.json();
 })
+.then((respostaApi) => {
+    console.log(respostaApi);  
+})
+.catch(() => {
 
-.catch((impar) => {
-    console.log(impar);
 })
