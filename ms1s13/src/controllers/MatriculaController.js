@@ -16,10 +16,15 @@ class MatriculaController {
             }
 
             const alunoExistente = await Aluno.findByPk(aluno_id)
+
+            if(!alunoExistente) {
+                return res.status(404).json({messagem: 'O aluno não existe'})
+            }
+
             const cursoExistente = await Curso.findByPk(curso_id)
 
-            if(!alunoExistente || !cursoExistente) {
-                return res.status(404).json({messagem: 'O aluno ou curso nao existe'})
+            if(!cursoExistente) {
+                return res.status(404).json({messagem: 'O curso não existe'})
             }
 
             const matricula = await Matricula.create({

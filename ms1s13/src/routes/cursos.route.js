@@ -1,4 +1,4 @@
-const { Router, query } = require('express') // 
+const { Router } = require('express') // 
 const Curso = require('../models/Curso')
 
 const { auth } = require('../middleware/auth')
