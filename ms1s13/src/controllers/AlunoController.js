@@ -1,9 +1,6 @@
 const Aluno = require('../models/Aluno')
 
 class AlunoController {
-    // construtor
-    // metodos 
-    // atributos
 
     async listarTodos(req, res) {
         try {
@@ -75,4 +72,3 @@ class AlunoController {
 }
 
 module.exports = new AlunoController()
-
